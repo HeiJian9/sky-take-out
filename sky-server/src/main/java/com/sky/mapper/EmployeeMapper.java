@@ -15,7 +15,7 @@ public interface EmployeeMapper {
      * @param username
      * @return
      */
-    @Select("select * from employee where username = #{username}")
+    @Select("select * from sky_take_out.employee where username = #{username}")
     Employee getByUsername(String username);
 
     /**
@@ -38,4 +38,12 @@ public interface EmployeeMapper {
      * @param employee
      */
     void update(Employee employee);
+
+    /**
+     * 根据id查询员工
+     * @param id
+     * @return
+     */
+    @Select("select * from sky_take_out.employee where id = #{id}")
+    Employee getById(Long id);
 }
